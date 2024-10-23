@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: radicale-deployment-{{V_PH}} ## Placeholder for version
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: radicale
+      version: {{V_PH}} ## Placeholder for version
+  template:
+    metadata:
+      labels:
+        app: radicale
+        version: {{V_PH}} ## Placeholder for version
+    spec:
+      containers:
+      - name: radicale
+        image: {{DOCKER_USER}}/radicale:{{V_PH}} ## Placeholder for DockerHub username and version
+        ports:
+        - containerPort: 5232  # Internal port in the container
+        volumeMounts:
+        - name: radicale-storage
+          mountPath: /var/lib/radicale
+      volumes:
+      - name: radicale-storage
+        persistentVolumeClaim:
+          claimName: radicale-pvc
