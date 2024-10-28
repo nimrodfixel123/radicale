@@ -32,9 +32,9 @@ This script will:
 
 
 ## 3. Access Radicale:
-- Latest: http://localhost:80
-- Stable: http://localhost:90
-- Test: http://localhost:100
+- Latest: http://[host-ip]:5232
+- Stable: http://[host-ip]:5233
+- Test: http://[host-ip]:5234
 
 ## 4. To clean up (remove Kubernetes resources), use the `delete.sh` script:
 [`Delete Documentation`](DELETE.md)
