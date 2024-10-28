@@ -29,11 +29,7 @@ This script will:
 - Build and push Docker images for Radicale.
 - Deploy Kubernetes resources for all versions (`latest`, `stable`, and `test`).
 
-### To specify custom versions, use the following command:
-```bash
-./setup.sh "latest_version" "stable_version" "test_version"
-```
-If a field is left empty, the default version will be used.
+
 
 ## 3. Access Radicale:
 - Latest: http://localhost:80
